@@ -1,0 +1,11 @@
+{
+  "id": "numberless",
+  "name": "Numberless",
+  "author": ["Lynn"],
+  "description": "Hides every ASCII digit in rendered text without changing gameplay values.",
+  "prefix": "numless",
+  "main_file": "main.lua",
+  "version": "1.0.0",
+  "priority": 100000,
+  "dependencies": ["Steamodded (>=1.0.0~BETA-1221a)"]
+}

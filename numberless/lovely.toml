@@ -1,0 +1,15 @@
+[manifest]
+version = "1.0.0"
+dump_lua = false
+priority = 100000
+
+# Plain UI labels are cached and subsequently changed through Text:set. LÖVE's
+# userdata methods cannot be monkey-patched from Lua, so sanitize that update at
+# Balatro's single plain-UI call site. DynaText is covered by newText in main.lua.
+[[patches]]
+[patches.pattern]
+target = "engine/ui.lua"
+pattern = "self.config.text_drawable:set(self.config.text)"
+position = "at"
+match_indent = true
+payload = "self.config.text_drawable:set(Numberless.hide(self.config.text))"
